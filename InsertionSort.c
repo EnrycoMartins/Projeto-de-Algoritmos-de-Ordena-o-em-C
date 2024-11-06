@@ -37,7 +37,7 @@ int main() {
     double tempo_cpu;
     
     inicio = clock(); // Marca o tempo de início
-    MergeSort(lista, n); // Chama a função de ordenação, use aqui pra trocar o Sort
+    InsertionSort(lista, n); // Chama a função de ordenação, use aqui pra trocar o Sort
     fim = clock(); // Marca o tempo de fim
     
     tempo_cpu = ((double) (fim - inicio)) / CLOCKS_PER_SEC; // Calcula o tempo de execução
