@@ -58,24 +58,3 @@ int main()
     
     return 0;
 }
-
-/*anotações de tempos demorados com cada tamanho de array pedidos:
-		array=100:1°tentativa=0.000037 segundos
-				      2°tentativa=0.000052 segundos
-				      3°tentativa=0.000043 segundos
-				  
-		array=1.000:1°tentativa=0.004078 segundos
-				        2°tentativa=0.003759 segundos
-				        3°tentativa=0.002764 segundos
-				   
-		array=10.000:1°tentativa=0.205222 segundos
-				         2°tentativa=0.301958 segundos
-				         3°tentativa=0.228103 segundos
-					
-		array=50.000:1°tentativa=7.059930 segundos
-				         2°tentativa=7.105029 segundos
-				         3°tentativa=7.148405 segundos
-					
-		array=100.000:1°tentativa=40.537809 segundos
-				          2°tentativa=30.976330 segundos
-				          3°tentativa=41.008506 segundos     */
