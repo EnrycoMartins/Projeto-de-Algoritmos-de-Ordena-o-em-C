@@ -11,7 +11,7 @@ void BubbleSort (int lista[], int n)
   {
     for (proximo=0; proximo<n-1; proximo++)
       { 
-        if (lista[proximo]>lista[proximo+1] //Verefica se o elemento atual é maior que o proximo
+        if (lista[proximo]>lista[proximo+1]) //Verefica se o elemento atual é maior que o proximo
         {
           auxiliar=lista[proximo]; //Armazena o Valor atual
           lista[proximo]=lista[proximo+1]; //Coloca o proximo no lugar do atual
@@ -29,10 +29,10 @@ void printLista(int lista[], int n)
 }
 int main() 
 {
-    int n = 100; // Tamanho da lista (Ajustavel)
+    int n = 100000; // Tamanho da lista (Ajustavel)
     int lista[n];
 
-    srand(time(NULL)); // Inicializa a semente para geração de números aleatórios
+    srand(time(NULL)); // Inicializa a geração de números aleatórios
 
     // Preenche a lista com números aleatórios
     for (int i = 0; i < n; i++) {
