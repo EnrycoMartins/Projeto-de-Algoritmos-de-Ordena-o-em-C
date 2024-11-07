@@ -4,8 +4,8 @@
 void merge(int lista[], int n) 
 {
     int meio = n / 2; //Calcula o ponto médio da lista
-    int i = 0, j = meio, k = 0; // i=indice da primeira metade da lista, j=indice da segunda metade da lista, k=indice do array auxiliar
-    int auxiliar[n]; //array auxiliar para armazenar a lista mesclada
+    int i = 0, j = meio, k = 0; // i=indice da primeira metade da lista, j=indice da segunda metade da lista, k=indice da lista auxiliar
+    int auxiliar[n]; //lista auxiliar para armazenar a lista mesclada
     while( i < meio && j < n ) //Mescla as duas metades ordenadas
     {
         if( lista[i] <= lista[j] )
@@ -44,10 +44,10 @@ void printLista(int lista[], int n)
 }
 int main() 
 {
-    int n = 100; // Tamanho da lista (Ajustavel)
+    int n = 100000; // Tamanho da lista (Ajustavel)
     int lista[n];
 
-    srand(time(NULL)); // Inicializa a semente para geração de números aleatórios
+    srand(time(NULL)); // Inicializa a geração de números aleatórios
 
     // Preenche a lista com números aleatórios
     for (int i = 0; i < n; i++) {
