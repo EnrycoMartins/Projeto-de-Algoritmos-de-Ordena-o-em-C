@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 void InsertionSort(int lista[], int n) {
     int i, j, aux;
     // Inicializa o contador de trocas
-    int trocas = 0;
 
     for (i = 1; i < n; i++) { // Começa a partir do segundo elemento
         aux = lista[i]; // O elemento a ser inserido
@@ -14,14 +14,19 @@ void InsertionSort(int lista[], int n) {
         while (j >= 0 && lista[j] > aux) {
             lista[j + 1] = lista[j]; // Move o elemento para a direita
             j--; // Decrementa j
-            trocas++; // Aumenta o contador de trocas
         }
         lista[j + 1] = aux; // Insere o elemento na posição correta
     }
 
-    // Aqui você pode imprimir o número de trocas se necessário
-    printf("Trocas: %d\n", trocas);
 }
+
+void printLista(int lista[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", lista[i]);
+    }
+    printf("\n");
+}
+
 int main() {
     int n = 10; // Tamanho da lista (Ajustavel)
     int lista[n];
@@ -48,5 +53,5 @@ int main() {
     printf("lista ordenada:\n");
     printLista(lista, n);
     
-    return 0;
+    return 0;
 }
