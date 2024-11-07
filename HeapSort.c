@@ -41,7 +41,7 @@ void printLista(int lista[], int n) {
 }
 
 int main() {
-    int n = 10; // Tamanho da lista (Ajustável)
+    int n = 100000; // Tamanho da lista (Ajustável)
     int lista[n];
 
     srand(time(NULL)); // Inicializa a geração de números aleatórios
@@ -51,8 +51,6 @@ int main() {
         lista[i] = rand() % 10000; // Limita o tamanho dos números aleatórios
     }
 
-    printf("Lista original:\n\n");
-    printLista(lista, n); // Imprime a lista original
 
     clock_t inicio, fim;
     double tempo_cpu;
@@ -68,6 +66,8 @@ int main() {
     // Imprime a lista ordenada
     printf("Lista ordenada:\n\n");
     printLista(lista, n);
+    
+    printf("Tempo de execução: %f segundos\n\n", tempo_cpu);
 
     return 0;
 }
