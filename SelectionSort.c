@@ -20,7 +20,7 @@ void selectionSort(int lista[], int n) //Função
             }
         }
         
-        troca = lista[menor_elemento]; //Variável temporária-troca dos valores
+        troca = lista[menor_elemento]; //Variável temporária-roda
         lista[menor_elemento] = lista[i]; 
         lista[i] = troca; 
     }
@@ -32,10 +32,10 @@ void printLista(int lista[], int n) {
     printf("\n");
 }
 int main() {
-    int n = 10; // Tamanho da lista (Ajustavel)
+    int n = 100000; // Tamanho da lista (Ajustavel)
     int lista[n];
 
-    srand(time(NULL)); // Inicializa a semente para geração de números aleatórios
+    srand(time(NULL)); // Inicializa a geração de números aleatórios
 
     // Preenche a lista com números aleatórios
     for (int i = 0; i < n; i++) {
@@ -57,5 +57,6 @@ int main() {
     printf("lista ordenada:\n");
     printLista(lista, n);
     
+    printf("Tempo de execução: %f segundos\n", tempo_cpu);
     return 0;
 }
