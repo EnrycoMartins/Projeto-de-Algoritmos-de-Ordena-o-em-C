@@ -1,26 +1,35 @@
-void selectionSort(int vet[], int num_total) //Função
+#include <stdio.h> 
+#include <stdlib.h>
+#include <time.h>
+void selectionSort(int lista[], int n) //Função
 {
     int i; 
     int j; 
     int menor_elemento; //Variáveis
     int troca;
 
-    for (i = 0; i < num_total - 1; i++) 
+    for (i = 0; i < n - 1; i++) 
     {
         menor_elemento = i; //Assume o primeiro como menor
 
-        for (j = i + 1; j < num_total; j++) 
+        for (j = i + 1; j < n; j++) 
         {
-            if (vet[j] < vet[menor_elemento])
+            if (lista[j] < lista[menor_elemento])
             {
                 menor_elemento = j; //Assume o novo menor 
             }
         }
         
-        troca = vet[menor_elemento]; //Variável temporária-troca dos valores
-        vet[menor_elemento] = vet[i]; 
-        vet[i] = troca; 
+        troca = lista[menor_elemento]; //Variável temporária-troca dos valores
+        lista[menor_elemento] = lista[i]; 
+        lista[i] = troca; 
     }
+}
+void printLista(int lista[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", lista[i]);
+    }
+    printf("\n");
 }
 int main() {
     int n = 10; // Tamanho da lista (Ajustavel)
@@ -37,7 +46,7 @@ int main() {
     double tempo_cpu;
     
     inicio = clock(); // Marca o tempo de início
-    selectionsort(lista, n); // Chama a função de ordenação, use aqui pra trocar o Sort
+    selectionSort(lista, n); // Chama a função de ordenação, use aqui pra trocar o Sort
     fim = clock(); // Marca o tempo de fim
     
     tempo_cpu = ((double) (fim - inicio)) / CLOCKS_PER_SEC; // Calcula o tempo de execução
@@ -48,5 +57,5 @@ int main() {
     printf("lista ordenada:\n");
     printLista(lista, n);
     
-    return 0;
+    return 0;
 }
