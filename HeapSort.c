@@ -7,31 +7,31 @@ void Roda_de_troca(int *x, int *y) {
     *y = temporario;
 }
 
-void Galhos(int vet[], int num_total, int inicio_raiz) {
+void Galhos(int lista[], int n, int inicio_raiz) {
     int maior = inicio_raiz; 
     int esquerda = 2 * inicio_raiz + 1; // filho esquerdo
     int direita = 2 * inicio_raiz + 2; // filho direito
 
-    if (esquerda < num_total && vet[esquerda] > vet[maior]) //esquerdo maior
+    if (esquerda < n && lista[esquerda] > lista[maior]) //esquerdo maior
         maior = esquerda;
 
-    if (direita < num_total && vet[direita] > vet[maior]) //direito maior
+    if (direita < n && lista[direita] > lista[maior]) //direito maior
         maior = direita;
 
     if (maior != inicio_raiz) {
-        Roda_de_troca(&vet[inicio_raiz], &vet[maior]); //troca de valores
-        Galhos(vet, num_total, maior);
+        Roda_de_troca(&lista[inicio_raiz], &lista[maior]); //troca de valores
+        Galhos(lista, n, maior);
     }
 }
 
-void heapSort(int vet[], int num_total) {
-    for (int indice = num_total / 2 - 1; indice >= 0; indice--)
-        Galhos(vet, num_total, indice);
+void heapSort(int lista[], int n) {
+    for (int indice = n / 2 - 1; indice >= 0; indice--)
+        Galhos(lista, n, indice);
 
-    for (int final = num_total - 1; final >= 0; final--) {
-        Roda_de_troca(&vet[0], &vet[final]); // Move a raiz atual para o final
-        Galhos(vet, final, 0); // Chama Galhos na árvore reduzida
-    }
+    for (int final = n - 1; final >= 0; final--) {
+        Roda_de_troca(&lista[0], &lista[final]); // Move a raiz atual para o final
+        Galhos(lista, final, 0); // Chama Galhos na árvore reduzida
+    }
 }
 void printLista(int lista[], int n) {
     for (int i = 0; i < n; i++) {
@@ -58,7 +58,7 @@ int main() {
     double tempo_cpu;
 
     inicio = clock(); // Marca o tempo de início
-    QuickSort(lista, 0, n - 1); // Chama a função de ordenação
+    heapSort(lista, n); // Chama a função de ordenação
     fim = clock(); // Marca o tempo de fim
 
     tempo_cpu = ((double)(fim - inicio)) / CLOCKS_PER_SEC; // Calcula o tempo de execução
@@ -69,5 +69,5 @@ int main() {
     printf("Lista ordenada:\n\n");
     printLista(lista, n);
 
-    return 0;
+    return 0;
 }
